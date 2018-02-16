@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module rename-to='GXTSample'>
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.inject.Inject'/>
+
+    <!-- GXT -->
+    <stylesheet src="reset.css"/>
+    <inherits name='com.sencha.gxt.ui.GXT'/>
+
+    <!-- GXT Theme -->
+    <!-- <inherits name='com.sencha.gxt.theme.blue.Blue'/> -->
+    <inherits name='com.sencha.gxt.theme.gray.Gray'/>
+
+    <!-- GWTP -->
+    <!--<inherits name='com.gwtplatform.dispatch.Dispatch'/>-->
+    <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
+
+    <!-- RestyGWT -->
+    <inherits name="org.fusesource.restygwt.RestyGWT"/>
+    <set-property name="restygwt.encodeDecode.useGwtJackson" value="true"/>
+    <inherits name="com.github.nmorel.gwtjackson.GwtJackson"/>
+
+    <!-- Logging -->
+    <inherits name="ru.finam.slf4jgwt.logging.gwt.Logging"/>
+    <inherits name="ru.finam.slf4jgwt.logging.util.Util"/>
+    <set-property name="gwt.logging.enabled" value="TRUE"/>
+    <set-property name="gwt.logging.logLevel" value="FINE"/>
+
+    <source path='client'/>
+    <source path='shared'/>
+
+    <!-- Default GIN Module -->
+    <set-configuration-property name="gin.ginjector.modules" value="com.domax.gwt.client.gin.ClientModule"/>
+</module>

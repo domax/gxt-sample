@@ -10,15 +10,18 @@ import javax.ws.rs.core.MediaType;
 import java.util.Arrays;
 import java.util.Date;
 
+import static com.domax.gwt.shared.Constants.API_HOME;
+import static com.domax.gwt.shared.Constants.API_LINES;
+
 /**
  * @author <a href="mailto:max@dominichenko.com">Max Dominichenko</a>
  */
 @Slf4j
-@Path("/home")
+@Path(API_HOME)
 public class HomeResource {
 
     @GET
-    @Path("/lines")
+    @Path(API_LINES)
     @Produces(MediaType.APPLICATION_JSON)
     public HomeInfo getLines() {
         log.info("Get home lines");

@@ -13,6 +13,8 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import ru.finam.slf4jgwt.logging.util.Log;
 
+import java.util.Optional;
+
 import static com.domax.gwt.client.api.CallbackConsumer.consume;
 
 public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter.MyProxy> {
@@ -37,6 +39,7 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
     @Override
     protected void onBind() {
         super.onBind();
-        homeService.getLines(consume(o -> o.ifPresent(v -> getView().setHomeInfo(v))));
+        homeService.getLines(consume(v -> Optional.ofNullable(v)
+                .ifPresent(i -> getView().setHomeInfo(i))));
     }
 }

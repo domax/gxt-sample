@@ -23,7 +23,7 @@
     <container:SimpleContainer>
         
            <!-- VerticalLayoutContainer -->
-        <container:VerticalLayoutContainer addStyleNames="{style.vlc}" ui:field="vlc">
+        <container:VerticalLayoutContainer addStyleNames="{style.vlc}">
 
             <!-- VerticalLayoutContainer child with layoutData -->
             <container:child layoutData="{layoutData}">

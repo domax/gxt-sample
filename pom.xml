@@ -124,9 +124,7 @@
                     <copyWebapp>true</copyWebapp>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <runTarget>index.html</runTarget>
-                    <modules>
-                        <module>com.domax.gwt.${module}</module>
-                    </modules>
+                    <module>com.domax.gwt.${module}</module>
                 </configuration>
                 <executions>
                     <execution>

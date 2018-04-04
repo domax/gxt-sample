@@ -24,7 +24,9 @@ public class HomeResource {
     @Path(API_LINES)
     @Produces(MediaType.APPLICATION_JSON)
     public HomeInfo getLines() {
-        log.info("Get home lines");
-        return new HomeInfo(1L, Arrays.asList("Home page text", "Line 1", "Line 2", "Line 3"), new Date());
+        log.info("getLines");
+        final HomeInfo result = new HomeInfo(1L, Arrays.asList("Home page text", "Line 1", "Line 2", "Line 3"), new Date());
+        if (log.isDebugEnabled()) log.debug("getLines: " + result);
+        return result;
     }
 }

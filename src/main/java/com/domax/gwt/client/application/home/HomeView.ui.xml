@@ -20,24 +20,18 @@
         <ui:attributes width="-1" height="-1" margins="{margins}" />
     </ui:with>
     
-    <container:SimpleContainer>
-        
-           <!-- VerticalLayoutContainer -->
-        <container:VerticalLayoutContainer addStyleNames="{style.vlc}" ui:field="vlc">
+    <container:VerticalLayoutContainer addStyleNames="{style.vlc}">
 
-            <!-- VerticalLayoutContainer child with layoutData -->
-            <container:child layoutData="{layoutData}">
-                <g:HTML ui:field="lines"/>
-            </container:child>
-            <container:child layoutData="{layoutData}">
-                <g:HTML>Find more GXT guides here <a href='http://docs.sencha.com/gxt-guides/3'>GXT Guides</a></g:HTML>
-            </container:child>
-            <container:child layoutData="{layoutData}">
-                <g:HTML ui:field="timestamp"/>
-            </container:child>
+        <container:child layoutData="{layoutData}">
+            <g:HTML ui:field="lines"/>
+        </container:child>
+        <container:child layoutData="{layoutData}">
+            <g:HTML>Find more GXT guides here <a href='http://docs.sencha.com/gxt-guides/3'>GXT Guides</a></g:HTML>
+        </container:child>
+        <container:child layoutData="{layoutData}">
+            <g:Label ui:field="timestamp"/>
+        </container:child>
 
-        </container:VerticalLayoutContainer>
-        
-    </container:SimpleContainer>
-    
+    </container:VerticalLayoutContainer>
+
 </ui:UiBinder>

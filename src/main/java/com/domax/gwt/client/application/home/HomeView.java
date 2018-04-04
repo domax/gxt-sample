@@ -5,9 +5,11 @@ import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
+import com.sencha.gxt.core.client.resources.ThemeStyles;
 
 import java.util.Collections;
 import java.util.Date;
@@ -18,7 +20,7 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
     interface Binder extends UiBinder<Widget, HomeView> {}
 
     @UiField HTML lines;
-    @UiField HTML timestamp;
+    @UiField Label timestamp;
 
     @Inject
     public HomeView(Binder uiBinder) {

@@ -1,8 +1,8 @@
 package com.domax.gwt.client.api;
 
+import lombok.extern.slf4j.Slf4j;
 import org.fusesource.restygwt.client.Method;
 import org.fusesource.restygwt.client.MethodCallback;
-import ru.finam.slf4jgwt.logging.util.Log;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -10,6 +10,7 @@ import java.util.function.Consumer;
 /**
  * @author <a href="mailto:max@dominichenko.com">Max Dominichenko</a>
  */
+@Slf4j
 public class CallbackConsumer<T> implements MethodCallback<T> {
 
     public static <T> CallbackConsumer<T> consume(Consumer<T> consumer) {
@@ -35,12 +36,13 @@ public class CallbackConsumer<T> implements MethodCallback<T> {
 
     @Override
     public void onFailure(Method method, Throwable exception) {
-        Log.w(method.getResponse().getText(), exception);
+        log.warn(method.getResponse().getText(), exception);
         consumer.accept(null, exception);
     }
 
     @Override
     public void onSuccess(Method method, T response) {
+        log.debug("Consuming response: " + response);
         consumer.accept(response, null);
     }
 }

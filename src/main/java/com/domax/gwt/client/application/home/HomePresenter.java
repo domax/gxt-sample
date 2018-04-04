@@ -11,12 +11,11 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
-import ru.finam.slf4jgwt.logging.util.Log;
-
-import java.util.Optional;
+import lombok.extern.slf4j.Slf4j;
 
 import static com.domax.gwt.client.api.CallbackConsumer.consume;
 
+@Slf4j
 public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter.MyProxy> {
 
     interface MyView extends View {
@@ -33,13 +32,12 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
     public HomePresenter(EventBus eventBus, MyView view, MyProxy proxy, HomeService homeService) {
         super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN);
         this.homeService = homeService;
-        Log.d("HomePresenter instantiated");
+        log.debug("HomePresenter instantiated");
     }
 
     @Override
     protected void onBind() {
         super.onBind();
-        homeService.getLines(consume(v -> Optional.ofNullable(v)
-                .ifPresent(i -> getView().setHomeInfo(i))));
+        homeService.getLines(consume(v -> v.ifPresent(i -> getView().setHomeInfo(i))));
     }
 }

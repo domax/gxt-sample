@@ -7,9 +7,9 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import java.util.TreeSet;
 import java.util.stream.Stream;
 
 /**
@@ -28,8 +28,8 @@ public class GWTPerfectCacheFilter implements Filter {
     private static final String CACHE_PARAM = "cacheUrlSubstrings";
     private static final String NO_CACHE_PARAM = "noCacheUrlSubstrings";
 
-    private final Set<String> cacheUrlSubstrings = new TreeSet<>();
-    private final Set<String> noCacheUrlSubstrings = new TreeSet<>();
+    private final Set<String> cacheUrlSubstrings = new HashSet<>();
+    private final Set<String> noCacheUrlSubstrings = new HashSet<>();
 
     @Override
     public void init(FilterConfig filterConfig) {

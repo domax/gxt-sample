@@ -2,13 +2,14 @@ package com.domax.gwt.client.api;
 
 import com.google.gwt.core.client.GWT;
 import com.google.inject.Singleton;
+import lombok.extern.slf4j.Slf4j;
 import org.fusesource.restygwt.client.Defaults;
 import org.fusesource.restygwt.client.ServiceRoots;
-import ru.finam.slf4jgwt.logging.util.Log;
 
 /**
  * @author <a href="mailto:max@dominichenko.com">Max Dominichenko</a>
  */
+@Slf4j
 @Singleton
 public class RestClient {
 
@@ -20,6 +21,6 @@ public class RestClient {
         ServiceRoots.add(SRK_CUSTOM_API, serviceRoot);
 //        ServiceRoots.add("google-places-api", "https://maps.googleapis.com/maps/api");
 
-        Log.i("REST service root is '{}'", serviceRoot);
+        log.info("REST service root is '{}'", serviceRoot);
     }
 }

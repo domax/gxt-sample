@@ -12,6 +12,10 @@
     <description>Basic GWTP application with the GXT library</description>
 
     <properties>
+        <target.jdk>1.8</target.jdk>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <!-- client -->
         <gxt.version>4.0.0</gxt.version>
         <gwt.version>2.8.2</gwt.version>
@@ -37,18 +41,8 @@
         <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>2.2</maven-war-plugin.version>
-        <!--<maven-resources-plugin.version>2.5</maven-resources-plugin.version>-->
-        <!--<maven-processor-plugin.version>2.0.5</maven-processor-plugin.version>-->
-        <!--<maven-build-helper-plugin.version>1.7</maven-build-helper-plugin.version>-->
-
-        <target.jdk>1.8</target.jdk>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <gwtc.workers>2</gwtc.workers>
 
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-
-        <module>GXTSample</module>
     </properties>
 
     <repositories>
@@ -118,13 +112,12 @@
                 <configuration>
                     <!-- With multiple tests use GwtTestSuite.java for speed -->
                     <includes>**/*GwtTest.java</includes>
-                    <!--suppress MavenModelInspection, MybatisMapperXmlInspection -->
+                    <!--suppress MavenModelInspection -->
                     <extraJvmArgs>-Xss1m -Xmx1g -javaagent:${org.projectlombok:lombok:jar}=ECJ</extraJvmArgs>
-                    <!--<localWorkers>${gwtc.workers}</localWorkers>-->
                     <copyWebapp>true</copyWebapp>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <runTarget>index.html</runTarget>
-                    <module>com.domax.gwt.${module}</module>
+                    <module>com.domax.gwt.GXTSample</module>
                 </configuration>
                 <executions>
                     <execution>

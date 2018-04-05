@@ -3,7 +3,7 @@ GWTP Basic with GXT
 
 Sample project that includes the following (most important) libraries:
 * __Client side__: 
-    - [GWT] v2.8.1
+    - [GWT] v2.8.2
     - [GWT-Platform] v1.6 
     - [GXT] v4.0.0
     - [RestyGWT] v2.2.3

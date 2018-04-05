@@ -19,6 +19,7 @@ public class HomeView extends ViewImpl implements HomePresenter.MyView {
 
     interface Binder extends UiBinder<Widget, HomeView> {}
 
+    @UiField(provided = true) ThemeStyles.Styles themeStyle = ThemeStyles.get().style();
     @UiField HTML lines;
     @UiField Label timestamp;
 

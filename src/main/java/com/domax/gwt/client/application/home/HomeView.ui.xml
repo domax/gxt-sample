@@ -17,27 +17,34 @@
 
     <ui:with type="com.sencha.gxt.core.client.resources.ThemeStyles.Styles" field="themeStyle"/>
 
-    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="outerMargins">
+    <ui:with type="com.sencha.gxt.core.client.util.Margins"
+             field="outerMargins">
         <ui:attributes top="10" right="10" bottom="10" left="10"/>
     </ui:with>
-    <ui:with type="com.sencha.gxt.core.client.util.Margins" field="centerMargins">
+    <ui:with type="com.sencha.gxt.core.client.util.Margins"
+             field="centerMargins">
         <ui:attributes top="0" right="10" bottom="0" left="10"/>
     </ui:with>
 
-    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData" field="topData">
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+             field="topData">
         <ui:attributes width="1" height="20" margins="{outerMargins}"/>
     </ui:with>
-    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData" field="middleData">
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+             field="middleData">
         <ui:attributes width="1" height="-104" margins="{centerMargins}"/>
     </ui:with>
-    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData" field="bottomData">
+    <ui:with type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData"
+             field="bottomData">
         <ui:attributes width="1" height="20" margins="{outerMargins}"/>
     </ui:with>
 
     <gxt:ContentPanel ui:field="panel" heading="Vertical Layout">
         <container:VerticalLayoutContainer>
             <container:child layoutData="{topData}">
-                <g:HTML styleName="{style.pad-text} {style.gray-bg} {themeStyle.border}">Find more GXT guides here <a href='http://docs.sencha.com/gxt/4.x/' target="_blank">GXT Guides</a></g:HTML>
+                <g:HTML styleName="{style.pad-text} {style.gray-bg} {themeStyle.border}">
+                    Find more GXT guides here <a href='http://docs.sencha.com/gxt/4.x/' target="_blank">GXT Guides</a>
+                </g:HTML>
             </container:child>
             <container:child layoutData="{middleData}">
                 <g:HTML ui:field="lines" styleName="{style.pad-text} {style.gray-bg} {themeStyle.border}"/>

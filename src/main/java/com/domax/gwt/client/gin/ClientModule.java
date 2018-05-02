@@ -13,19 +13,20 @@ import com.gwtplatform.mvp.shared.proxy.RouteTokenFormatter;
 
 public class ClientModule extends AbstractPresenterModule {
 
-    @Override
-    protected void configure() {
-        install(new DefaultModule.Builder()
-                .placeManager(DefaultPlaceManager.class)
-                .tokenFormatter(RouteTokenFormatter.class)
-                .build());
+  @Override
+  protected void configure() {
+    install(
+        new DefaultModule.Builder()
+            .placeManager(DefaultPlaceManager.class)
+            .tokenFormatter(RouteTokenFormatter.class)
+            .build());
 
-        install(new ApplicationModule());
+    install(new ApplicationModule());
 
-        bind(RestClient.class).asEagerSingleton();
+    bind(RestClient.class).asEagerSingleton();
 
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
-    }
+    bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
+    bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
+    bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
+  }
 }

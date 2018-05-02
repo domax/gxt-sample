@@ -1,47 +1,49 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.8.2//EN" "http://www.gwtproject.org/doctype/2.8.2/gwt-module.dtd">
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.8.2//EN"
+  "http://www.gwtproject.org/doctype/2.8.2/gwt-module.dtd">
 <module rename-to='GXTSample'>
-    <!-- Inherit the core Web Toolkit stuff. -->
-    <inherits name="com.google.gwt.user.User"/>
-    <inherits name="com.google.gwt.inject.Inject"/>
+  <!-- Inherit the core Web Toolkit stuff. -->
+  <inherits name="com.google.gwt.user.User"/>
+  <inherits name="com.google.gwt.inject.Inject"/>
 
-    <!-- GXT -->
-    <stylesheet src="reset.css"/>
-    <inherits name="com.sencha.gxt.ui.GXT"/>
+  <!-- GXT -->
+  <stylesheet src="reset.css"/>
+  <inherits name="com.sencha.gxt.ui.GXT"/>
 
-    <!-- GXT Theme -->
-    <!-- <inherits name="com.sencha.gxt.theme.blue.Blue"/> -->
-    <!--<inherits name="com.sencha.gxt.theme.gray.Gray"/>-->
-    <!--<inherits name="com.sencha.gxt.theme.neptune.Theme"/>-->
-    <inherits name="com.sencha.gxt.theme.triton.Theme"/>
-    <set-property name="gxt.css3.enabled" value="true"/>
+  <!-- GXT Theme -->
+  <!-- <inherits name="com.sencha.gxt.theme.blue.Blue"/> -->
+  <!--<inherits name="com.sencha.gxt.theme.gray.Gray"/>-->
+  <!--<inherits name="com.sencha.gxt.theme.neptune.Theme"/>-->
+  <inherits name="com.sencha.gxt.theme.triton.Theme"/>
+  <set-property name="gxt.css3.enabled" value="true"/>
 
-    <!-- GWTP -->
-    <!--<inherits name="com.gwtplatform.dispatch.Dispatch"/>-->
-    <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint"/>
+  <!-- GWTP -->
+  <!--<inherits name="com.gwtplatform.dispatch.Dispatch"/>-->
+  <inherits name="com.gwtplatform.mvp.MvpWithEntryPoint"/>
 
-    <!-- RestyGWT -->
-    <inherits name="org.fusesource.restygwt.RestyGWT"/>
-    <set-property name="restygwt.encodeDecode.useGwtJackson" value="true"/>
-    <inherits name="com.github.nmorel.gwtjackson.GwtJackson"/>
+  <!-- RestyGWT -->
+  <inherits name="org.fusesource.restygwt.RestyGWT"/>
+  <set-property name="restygwt.encodeDecode.useGwtJackson" value="true"/>
+  <inherits name="com.github.nmorel.gwtjackson.GwtJackson"/>
 
-    <!-- Logging -->
-    <inherits name="ru.finam.slf4jgwt.logging.gwt.Logging"/>
-    <inherits name="ru.finam.slf4jgwt.logging.util.Util"/>
-    <set-property name="gwt.logging.enabled" value="TRUE"/>
-    <set-property name="gwt.logging.logLevel" value="FINE"/>
+  <!-- Logging -->
+  <inherits name="ru.finam.slf4jgwt.logging.gwt.Logging"/>
+  <inherits name="ru.finam.slf4jgwt.logging.util.Util"/>
+  <set-property name="gwt.logging.enabled" value="TRUE"/>
+  <set-property name="gwt.logging.logLevel" value="FINE"/>
 
-    <source path="client"/>
-    <source path="shared"/>
+  <source path="client"/>
+  <source path="shared"/>
 
-    <!-- Default GIN Module -->
-    <set-configuration-property name="gin.ginjector.modules" value="com.domax.gwt.client.gin.ClientModule"/>
+  <!-- Default GIN Module -->
+  <set-configuration-property name="gin.ginjector.modules"
+    value="com.domax.gwt.client.gin.ClientModule"/>
 
-    <!-- Decreasing number of permutations -->
-    <collapse-property name="gxt.device" values="phone, tablet"/>
-    <!--<collapse-property name="gxt.theme" values="blue, gray"/>-->
-    <collapse-property name="gxt.user.agent" values="air, safari*, chrome*, gecko*, ie11"/>
-    <collapse-property name="user.agent" values="safari*, gecko*"/>
-    <collapse-property name="gxt.user.agent" values="ie8, ie9, ie10"/>
-    <collapse-property name="user.agent" values="ie*"/>
+  <!-- Decreasing number of permutations -->
+  <collapse-property name="gxt.device" values="phone, tablet"/>
+  <!--<collapse-property name="gxt.theme" values="blue, gray"/>-->
+  <collapse-property name="gxt.user.agent" values="air, safari*, chrome*, gecko*, ie11"/>
+  <collapse-property name="user.agent" values="safari*, gecko*"/>
+  <collapse-property name="gxt.user.agent" values="ie8, ie9, ie10"/>
+  <collapse-property name="user.agent" values="ie*"/>
 </module>

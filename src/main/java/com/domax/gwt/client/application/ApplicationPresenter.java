@@ -10,18 +10,19 @@ import com.gwtplatform.mvp.client.proxy.Proxy;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
+public class ApplicationPresenter
+    extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
 
-    public static final NestedSlot SLOT_MAIN = new NestedSlot();
+  public static final NestedSlot SLOT_MAIN = new NestedSlot();
 
-    interface MyView extends View {}
+  interface MyView extends View {}
 
-    @ProxyStandard
-    interface MyProxy extends Proxy<ApplicationPresenter> {}
+  @ProxyStandard
+  interface MyProxy extends Proxy<ApplicationPresenter> {}
 
-    @Inject
-    public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy) {
-        super(eventBus, view, proxy, RevealType.Root);
-        log.debug("ApplicationPresenter instantiated");
-    }
+  @Inject
+  public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy) {
+    super(eventBus, view, proxy, RevealType.Root);
+    log.debug("ApplicationPresenter instantiated");
+  }
 }
